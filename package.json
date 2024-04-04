@@ -23,6 +23,10 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "migrate:local": "wrangler d1 migrations apply --local DB",
+    "migrate:local:force": "wrangler d1 execute --local --command \"delete from d1_migrations\" DB ; wrangler d1 migrations apply --local DB",
+    "migrate:prod": "wrangler d1 migrations apply --remote DB",
+    "migrate:prod:force": "wrangler d1 execute --remote --command \"delete from d1_migrations\" DB ; wrangler d1 migrations apply --remote DB",
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist --compatibility-flags=nodejs_als",
     "start": "vite --open --mode ssr",
@@ -48,6 +52,6 @@
     "undici": "*",
     "vite": "^5.1.4",
     "vite-tsconfig-paths": "^4.2.1",
-    "wrangler": "^3.0.0"
+    "wrangler": "^3.45.0"
   }
 }

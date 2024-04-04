@@ -1,0 +1,7 @@
+[[d1_databases]]
+binding = "DB"
+database_name = "sqdash"
+database_id = "a497b07b-8cf6-4cd1-8003-5d0307dd9707"
+preview_database_id = "DB"
+migrations_table = "d1_migrations"
+migrations_dir = "migrations"
